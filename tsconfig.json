@@ -1,25 +1,45 @@
 {
 	"compilerOptions": {
 		"baseUrl": ".",
-		"types": ["vite/client", "node"],
-		"target": "ESNext",
-		"useDefineForClassFields": true,
+		"types": [
+			"vite/client",
+			"node"
+		],
 		"module": "ESNext",
-		"lib": ["ESNext", "DOM"],
+		"target": "ESNext",
 		"moduleResolution": "Node",
+		"esModuleInterop": true,
 		"strict": true,
+		"useDefineForClassFields": true,
+		"lib": [
+			"ESNext",
+			"DOM"
+		],
 		"sourceMap": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"esModuleInterop": true,
 		"noEmit": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
 		"skipLibCheck": true,
+		"noImplicitAny": false,
 		"paths": {
-			"~/*": ["./src/*"]
+			"@/*": [
+				"./src/*"
+			]
 		}
 	},
-	"include": ["src"]
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"src/**/*.vue",
+		"src/auto-imports.d.ts",
+		"src/typed-router.d.ts",
+		"src/components.d.ts",
+		"src/vite-env.d.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
 }

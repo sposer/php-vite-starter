@@ -1,5 +1,4 @@
 {
-	"$schema": "https://getcomposer.org/schema.json",
 	"name": "nititech/php-vite-starter",
 	"description": "A modern vanilla PHP-Vite starter repo, utilizing vite-plugin-php",
 	"version": "1.0.0",
@@ -23,9 +22,20 @@
 		"email": "mail@nititech.de",
 		"url": "https://nititech.de"
 	},
-	"repositories": [],
 	"require": {
 		"php": ">=7.3",
-		"nikic/fast-route": "^1.3"
+		"nikic/fast-route": "^1.3",
+		"vlucas/phpdotenv": "^5.6"
+	},
+	"autoload": {
+		"files": [
+			"php/bootstrap.php",
+			"php/functions.php"
+		],
+		"psr-4": {
+			"Layouts\\": "php/layouts",
+			"Pages\\": "php/pages",
+			"Libs\\": "php/libs"
+		}
 	}
 }

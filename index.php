@@ -1,19 +1,12 @@
 <?php
 
-// Initial setup
-
-define('ROOT', __DIR__);
-define('MODE_DEV', '%MODE%' === 'development');
-
-function require_existing(string $path) {
-	file_exists($path) && require_once($path);
-}
-
-require_existing('vendor/autoload.php');
-require_existing('configs/env.php');
+require_once dirname(__FILE__) . '/init.php';
 
 try {
-	require_existing('configs/routes.php');
+	require_once ROOT . '/configs/routes.php';
 } catch (\Throwable $th) {
-	die('Error: ' . $th->getMessage());
+	echo $th->getMessage();
+	echo '<br>';
+	echo $th->getTraceAsString();
+	exit(0);
 }

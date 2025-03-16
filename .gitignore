@@ -19,3 +19,10 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+.idea
+src/typed-router.d.ts
+src/auto-imports.d.ts
+src/components.d.ts
+composer.lock
+pnpm-lock.yaml
